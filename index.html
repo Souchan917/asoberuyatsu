@@ -95,6 +95,8 @@
         }
 
         .work-item {
+            text-decoration: none; /* 下線を消す */
+            display: block; /* ブロック要素として表示 */
             position: relative;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 4px;
@@ -153,6 +155,10 @@
 
         .work-item:hover h2 {
             color: var(--accent-color);
+        }
+
+        .work-item:focus {
+            outline: none;
         }
 
         /* Coming Soon カード */
@@ -328,26 +334,27 @@
     </header>
 
     <div class="work-container">
-        <!-- 既存の作品カード -->
-        <div class="work-item fade-up">
+        <!-- EXTの作品カード -->
+        <a href="https://extnazo.wixsite.com/extnazo" target="_blank" class="work-item fade-up">
             <div class="work-item-inner">
                 <div class="work-item-image">
                     <img src="https://souchan917.github.io/asoberuyatu/assets/img/EXT.jpg" alt="EXT">
                 </div>
                 <h2>EXT</h2>
             </div>
-        </div>
+        </a>
     
-        <div class="work-item fade-up">
+        <!-- WEB謎の作品カード -->
+        <a href="https://souchan917.github.io/webnazorikaishita/" target="_blank" class="work-item fade-up">
             <div class="work-item-inner">
                 <div class="work-item-image">
                     <img src="https://Souchan917.github.io/asoberuyatu/assets/img/webnazorikaishita.png" alt="WEB謎">
                 </div>
                 <h2>WEB謎完全に理解した</h2>
             </div>
-        </div>
+        </a>
     
-        <!-- Coming Soon カード -->
+        <!-- Coming Soonカードはリンクなし -->
         <div class="work-item coming-soon fade-up">
             <div class="work-item-inner">
                 <div class="work-item-image">
