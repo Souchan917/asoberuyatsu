@@ -288,17 +288,38 @@
                 padding: 100px 20px 20px;
             }
 
+            .work-container:hover a.work-item,
+            .work-container:hover .work-item {
+                opacity: 1;
+                filter: none;
+                transform: none;
+            }
+
+            .work-container a.work-item:hover,
+            .work-container .work-item:hover {
+                opacity: 1 !important;
+                filter: none !important;
+                transform: none !important;
+                box-shadow: none;
+                background: none;
+            }
+
             .work-item {
                 max-width: 100%;
+                transition: none;
+            }
+
+            .work-item-image img {
+                transition: none;
+            }
+
+            .work-item-inner {
+                padding: 10px;
             }
 
             h1 {
                 font-size: 1.5rem;
                 letter-spacing: 0.5em;
-            }
-
-            .work-item-inner {
-                padding: 10px;
             }
         }
     </style>
