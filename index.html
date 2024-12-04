@@ -29,6 +29,48 @@
         }
 
 
+
+
+        #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        }
+
+        .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        }
+
+        .fade-in {
+        animation: fadeIn 1s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+        }
+
+
+
+
+        
         #bg-canvas {
             position: fixed;
             top: 0;
@@ -484,162 +526,190 @@
     </style>
 </head>
 <body>
+
+
+
+    <div id="loading">
+        <div class="spinner"></div>
+      </div>
     <div class="grid-overlay"></div>
     
-    <div class="decorative-line line-1"></div>
-    <div class="decorative-line line-2"></div>
-    <div class="decorative-line line-3"></div>
 
-    <div class="corner corner-tl"></div>
-    <div class="corner corner-tr"></div>
-    <div class="corner corner-bl"></div>
-    <div class="corner corner-br"></div>
 
-    <header class="header">
-        <h1>ASOBERUYATSU</h1>
-    </header>
-
-    <div class="work-container">
-        <!-- EXTの作品カード -->
-        <a href="https://extnazo.wixsite.com/extnazo" target="_blank" rel="noopener noreferrer" class="work-item fade-up">
-            <div class="work-item-inner">
-                <div class="work-item-image">
-                    <img src="https://souchan917.github.io/asoberuyatsu/assets/img/EXT.jpg" alt="EXT">
-                </div>
-                <h2>EXT</h2>
-            </div>
-        </a>
+        <!-- 既存のコンテンツをdiv で囲む -->
+    <div id="content" style="display: none;">
+        <div class="decorative-line line-1"></div>
+        <div class="decorative-line line-2"></div>
+        <div class="decorative-line line-3"></div>
     
-        <!-- WEB謎の作品カード -->
-        <a href="https://souchan917.github.io/webnazorikaishita/" target="_blank" rel="noopener noreferrer" class="work-item fade-up">
-            <div class="work-item-inner">
-                <div class="work-item-image">
-                    <img src="https://Souchan917.github.io/asoberuyatsu/assets/img/webnazorikaishita.png" alt="WEB謎">
-                </div>
-                <h2>WEB謎完全に理解した</h2>
-            </div>
-        </a>
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
     
-        <!-- Coming Soonカード -->
-        <div class="work-item coming-soon fade-up">
-            <div class="work-item-inner">
-                <div class="work-item-image">
-                    <div class="coming-soon-text">Coming Soon</div>
+        <header class="header">
+            <h1>ASOBERUYATSU</h1>
+        </header>
+    
+        <div class="work-container">
+            <!-- EXTの作品カード -->
+            <a href="https://extnazo.wixsite.com/extnazo" target="_blank" rel="noopener noreferrer" class="work-item fade-up">
+                <div class="work-item-inner">
+                    <div class="work-item-image">
+                        <img src="https://souchan917.github.io/asoberuyatsu/assets/img/EXT.jpg" alt="EXT">
+                    </div>
+                    <h2>EXT</h2>
                 </div>
-                <h2>NAZOTOKI??????</h2>
-                <div class="progress-bar"></div>
+            </a>
+        
+            <!-- WEB謎の作品カード -->
+            <a href="https://souchan917.github.io/webnazorikaishita/" target="_blank" rel="noopener noreferrer" class="work-item fade-up">
+                <div class="work-item-inner">
+                    <div class="work-item-image">
+                        <img src="https://Souchan917.github.io/asoberuyatsu/assets/img/webnazorikaishita.png" alt="WEB謎">
+                    </div>
+                    <h2>WEB謎完全に理解した</h2>
+                </div>
+            </a>
+        
+            <!-- Coming Soonカード -->
+            <div class="work-item coming-soon fade-up">
+                <div class="work-item-inner">
+                    <div class="work-item-image">
+                        <div class="coming-soon-text">Coming Soon</div>
+                    </div>
+                    <h2>NAZOTOKI??????</h2>
+                    <div class="progress-bar"></div>
+                </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="about-container fade-up">
-        <div class="about-inner">
-            <h2 class="about-title">ABOUT ME</h2>
+    
+    
+        <div class="about-container fade-up">
+            <div class="about-inner">
+                <h2 class="about-title">ABOUT ME</h2>
+                
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://souchan917.github.io/asoberuyatsu/assets/img/about_me.jpg" alt="プロフィール画像">
+                    </div>
+                
+                    <div class="about-text">
+                        <h3>そうた</h3>
+                        <p>謎解き制作者（ちょっと） / Web開発者(ちょこっと) / 大学生</p>
+                        
+                        <div class="about-description">
+                            <h4>What I Do</h4>
+                            <p>謎解きが好きで、Webベースの謎解きコンテンツを制作しています。</p>
+                            <p>写真のハリネズミはイギリスで一目ぼれしたので連れて帰りました。</p>
             
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://souchan917.github.io/asoberuyatsu/assets/img/about_me.jpg" alt="プロフィール画像">
-                </div>
-            
-                <div class="about-text">
-                    <h3>そうた</h3>
-                    <p>謎解き制作者（ちょっと） / Web開発者(ちょこっと) / 大学生</p>
-                    
-                    <div class="about-description">
-                        <h4>What I Do</h4>
-                        <p>謎解きが好きで、Webベースの謎解きコンテンツを制作しています。</p>
-                        <p>写真のハリネズミはイギリスで一目ぼれしたので連れて帰りました。</p>
-        
-                        
-                        <h4>Recent Works</h4>
-                        <!-- <p>EXT</p> -->
-                        <p>WEB謎完全に理解した</p>
-                        
-                        <!-- <h4>Skills & Tools</h4>
-                        <p>Web開発: HTML, CSS, JavaScript</p>
-                        <p>🎨 デザイン: 基本的なUIデザイン</p>
-                        <p>🧩 謎制作: 論理パズル, 暗号作成</p> -->
-                        
-                        <h4>Like</h4>
-
-                        <div class="interests-grid">
-                            <div class="interest-category">
-                                <h5>謎解き</h5>
-                                <p>• IMMORTAL</p>
-                                <p>• Revolver</p>
-                                <p>• シンラバン商マーケット</p>
-                                <p>• loop</p>
+                            
+                            <h4>Recent Works</h4>
+                            <!-- <p>EXT</p> -->
+                            <p>WEB謎完全に理解した</p>
+                            
+                            <!-- <h4>Skills & Tools</h4>
+                            <p>Web開発: HTML, CSS, JavaScript</p>
+                            <p>🎨 デザイン: 基本的なUIデザイン</p>
+                            <p>🧩 謎制作: 論理パズル, 暗号作成</p> -->
+                            
+                            <h4>Like</h4>
+    
+                            <div class="interests-grid">
+                                <div class="interest-category">
+                                    <h5>謎解き</h5>
+                                    <p>• IMMORTAL</p>
+                                    <p>• Revolver</p>
+                                    <p>• シンラバン商マーケット</p>
+                                    <p>• loop</p>
+                                </div>
+    
+                            
+                                <div class="interest-category">
+                                    <h5>ゲーム</h5>
+                                    <p>• スプラトゥーン3</p>
+                                    <p>• ダンガンロンパシリーズ</p>
+                                    <p>• maimai</p>
+                                </div>
+                            
+                            
+                                <div class="interest-category">
+                                    <h5>音楽</h5>
+                                    <p>• 新目鳥さん</p>
+                                    <p>• はるな。さん</p>
+                                    <p>• USAOさん</p>
+                                </div>
+    
+                                <div class="interest-category">
+                                    <h5>推し</h5>
+                           
+                                    <p>• 夏川くいな</p>
+                                    <p>• 富田美憂さん</p>
+                                    <p>• 轟はじめ</p>
+    
+                                </div>
+    
+                                <div class="interest-category">
+                                    <h5>趣味</h5>
+                                    <p>• 謎解き</p>
+                                    <p>• ブレイクダンス</p>
+                                    <p>• マジック</p>
+                     
+                                </div>
+                            
+                                <div class="interest-category">
+                                    <h5>お勉強中</h5>
+                                    <p>• 3DCG: Blender</p>
+                                    <p>• 映像編集: After Effects</p>
+                                    <p>• デザイン: Illustrator</p>
+                                    <p>• 技術: web/AI開発</p>
+                                    
+                                </div>
+    
+    
                             </div>
-
-                        
-                            <div class="interest-category">
-                                <h5>ゲーム</h5>
-                                <p>• スプラトゥーン3</p>
-                                <p>• ダンガンロンパシリーズ</p>
-                                <p>• maimai</p>
-                            </div>
-                        
-                        
-                            <div class="interest-category">
-                                <h5>音楽</h5>
-                                <p>• 新目鳥さん</p>
-                                <p>• はるな。さん</p>
-                                <p>• USAOさん</p>
-                            </div>
-
-                            <div class="interest-category">
-                                <h5>推し</h5>
-                       
-                                <p>• 夏川くいな</p>
-                                <p>• 富田美憂さん</p>
-                                <p>• 轟はじめ</p>
-
-                            </div>
-
-                            <div class="interest-category">
-                                <h5>趣味</h5>
-                                <p>• 謎解き</p>
-                                <p>• ブレイクダンス</p>
-                                <p>• マジック</p>
-                 
-                            </div>
-                        
-                            <div class="interest-category">
-                                <h5>お勉強中</h5>
-                                <p>• 3DCG: Blender</p>
-                                <p>• 映像編集: After Effects</p>
-                                <p>• デザイン: Illustrator</p>
-                                <p>• 技術: web/AI開発</p>
-                                
-                            </div>
-
-
+                            
+                            <h4>Contact & Social</h4>
+                            <p>めっちゃ話しかけてください！</p>
+                            <p>謎解きの話でも、Web開発の話でも、ゲームの話でも、なんでも！（変なのはNG）</p>
                         </div>
                         
-                        <h4>Contact & Social</h4>
-                        <p>めっちゃ話しかけてください！</p>
-                        <p>謎解きの話でも、Web開発の話でも、ゲームの話でも、なんでも！（変なのはNG）</p>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="https://x.com/Souchan917" target="_blank" rel="noopener noreferrer" class="social-link">
-                            <i class="fab fa-twitter"></i> Twitter
-                        </a>
-                        <!-- <a href="https://github.com/[あなたのGitHubID]" target="_blank" rel="noopener noreferrer" class="social-link">
-                            <i class="fab fa-github"></i> GitHub -->
-                        </a>
+                        <div class="social-links">
+                            <a href="https://x.com/Souchan917" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </a>
+                            <!-- <a href="https://github.com/[あなたのGitHubID]" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-github"></i> GitHub -->
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    
     </div>
-
+   
 
 
 
 
     <script>
+
+        window.addEventListener('load', function() {
+        const loading = document.getElementById('loading');
+        const content = document.getElementById('content');
+        
+        // ローディング画面を非表示
+        loading.style.display = 'none';
+        
+        // コンテンツを表示
+        content.style.display = 'block';
+        content.classList.add('fade-in');
+        });
+
+
+
+
         // スクロールアニメーション
         const observerOptions = {
             threshold: 0.1
