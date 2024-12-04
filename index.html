@@ -333,6 +333,9 @@
             padding: 2rem;
             margin: 2rem 0;
             position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center; /* 水平方向の中央揃え */
         }
 
         .about-inner {
@@ -340,6 +343,9 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 8px;
+            max-width: 1200px;
+            width: 100%; /* 幅を指定 */
+            margin: 0 auto; /* 左右のmarginを自動に */
         }
 
         .about-title {
@@ -356,7 +362,7 @@
         }
 
         .about-image {
-            flex: 0 0 300px;
+            flex: 0 0 200px;
         }
 
         .about-image img {
@@ -375,10 +381,16 @@
             color: #fff;
         }
 
+        .about-text h4 {
+            font-size: 1rem;
+            margin: 1rem 0;
+            color: #fff;
+        }
+
         .about-text p {
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.6;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .about-description {
@@ -413,6 +425,49 @@
                 flex: 0 0 auto;
                 max-width: 200px;
                 margin: 0 auto;
+            }
+        }
+
+
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .interest-category {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .interest-category:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .interest-category h5 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        .interest-category p {
+            margin: 0.5rem 0;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .interests-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
         }
     </style>
@@ -473,25 +528,94 @@
             
             <div class="about-content">
                 <div class="about-image">
-                    <!-- プロフィール画像がある場合は以下のようにパスを指定してください -->
                     <img src="https://souchan917.github.io/asoberuyatsu/assets/img/about_me.jpg" alt="プロフィール画像">
                 </div>
             
-                
                 <div class="about-text">
                     <h3>そうた</h3>
-                    <p>謎解き制作者 / Web開発者</p>
+                    <p>謎解き制作者（ちょっと） / Web開発者(ちょこっと) / 大学生</p>
                     
                     <div class="about-description">
-                        <!-- ここに自己紹介文を入れてください -->
-                        <p>謎解きとプログラミングが好きで、Webベースの謎解きコンテンツを制作しています。</p>
-                        <p>主にHTML/CSS/JavaScriptを使用したWeb制作を行っています。</p>
+                        <h4>What I Do</h4>
+                        <p>謎解きが好きで、Webベースの謎解きコンテンツを制作しています。</p>
+                        <p>写真のハリネズミはイギリスで一目ぼれしたので連れて帰りました。</p>
+        
+                        
+                        <h4>Recent Works</h4>
+                        <!-- <p>EXT</p> -->
+                        <p>WEB謎完全に理解した</p>
+                        
+                        <!-- <h4>Skills & Tools</h4>
+                        <p>Web開発: HTML, CSS, JavaScript</p>
+                        <p>🎨 デザイン: 基本的なUIデザイン</p>
+                        <p>🧩 謎制作: 論理パズル, 暗号作成</p> -->
+                        
+                        <h4>Like</h4>
+
+                        <div class="interests-grid">
+                            <div class="interest-category">
+                                <h5>謎解き</h5>
+                                <p>• IMMORTAL</p>
+                                <p>• Revolver</p>
+                                <p>• シンラバン商マーケット</p>
+                                <p>• loop</p>
+                            </div>
+
+                        
+                            <div class="interest-category">
+                                <h5>ゲーム</h5>
+                                <p>• スプラトゥーン3</p>
+                                <p>• ダンガンロンパシリーズ</p>
+                                <p>• maimai</p>
+                            </div>
+                        
+                        
+                            <div class="interest-category">
+                                <h5>音楽</h5>
+                                <p>• 新目鳥さん</p>
+                                <p>• はるな。さん</p>
+                                <p>• USAOさん</p>
+                            </div>
+
+                            <div class="interest-category">
+                                <h5>趣味</h5>
+                                <p>• 謎解き</p>
+                                <p>• ブレイクダンス</p>
+                                <p>• マジック</p>
+                 
+                            </div>
+                        
+                            <div class="interest-category">
+                                <h5>お勉強中</h5>
+                                <p>• 3DCG: Blender</p>
+                                <p>• 映像編集: After Effects</p>
+                                <p>• デザイン: Illustrator</p>
+                                <p>• 技術: web/AI開発</p>
+                                
+                            </div>
+
+                            <div class="interest-category">
+                                <h5>推し</h5>
+                       
+                                <p>• 夏川くいな</p>
+                                <p>• 富田美憂さん</p>
+                                <p>• 轟はじめ</p>
+
+                            </div>
+                        </div>
+                        
+                        <h4>Contact & Social</h4>
+                        <p>めっちゃ話しかけてください！</p>
+                        <p>謎解きの話でも、Web開発の話でも、ゲームの話でも、なんでも！（変なのはNG）</p>
                     </div>
                     
                     <div class="social-links">
-                        <!-- ソーシャルリンクを追加する場合は以下のように -->
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">Twitter</a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+                        <a href="https://x.com/Souchan917" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <!-- <a href="https://github.com/[あなたのGitHubID]" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-github"></i> GitHub -->
+                        </a>
                     </div>
                 </div>
             </div>
