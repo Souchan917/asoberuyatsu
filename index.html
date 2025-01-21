@@ -169,6 +169,7 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            height: 100%; /* 高さを100%に設定 */
         }
 
         .work-item-image {
@@ -544,15 +545,25 @@
             transform: translateX(5px);
         }
 
+        /* 追加するスタイル */
         .work-item-details {
             margin-top: 0.5rem;
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.7);
+            height: 40px; /* 固定の高さを設定 */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .work-item-details span {
-            display: inline-block;
-            margin-right: 1rem;
+            display: block; /* インラインブロックからブロックに変更 */
+            margin-bottom: 0.3rem; /* 下部にマージンを追加 */
+        }
+
+        .work-item h2 {
+            margin-bottom: 0.5rem; /* タイトルの下部にマージンを追加 */
+            min-height: 1.5em; /* タイトルの最小高さを設定 */
         }
 
         .difficulty {
@@ -619,7 +630,7 @@
             <a href="https://souchan917.github.io/Do/" target="_blank" rel="noopener noreferrer" class="work-item fade-up">
                 <div class="work-item-inner">
                     <div class="work-item-image">
-                        <img src="https://souchan917.github.io/asoberuyatsu/assets/img/Doplayer.png" alt="DoPlayer">
+                        <img src="https://souchan917.github.io/asoberuyatsu/assets/img/Doplayer.png" alt="Do Player">
                     </div>
                     <h2>Do</h2>
                     <div class="work-item-details">
