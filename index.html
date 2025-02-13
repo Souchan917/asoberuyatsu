@@ -28,49 +28,88 @@
             overflow-x: hidden;
         }
 
-
-
-
         #loading {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
         }
 
-        .spinner {
-        width: 50px;
-        height: 50px;
-        border: 5px solid #f3f3f3;
-        border-top: 5px solid #3498db;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
+        .loader {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .loader-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid transparent;
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+        }
+
+        .loader-circle:nth-child(2) {
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            animation-delay: -0.3s;
+        }
+
+        .loader-circle:nth-child(3) {
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            animation-delay: -0.6s;
+        }
+
+        .loader-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            letter-spacing: 0.2em;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            animation: pulse 1.5s ease-in-out infinite;
         }
 
         @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
         }
 
         .fade-in {
-        animation: fadeIn 1s ease-in forwards;
+            animation: fadeIn 1s ease-in forwards;
         }
 
         @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
-
-
-
-        
         /* #bg-canvas {
             position: fixed;
             top: 0;
@@ -377,11 +416,6 @@
             }
         }
 
-
-
-
-
-
         .about-container {
             width: 100%;
             padding: 2rem;
@@ -482,8 +516,6 @@
             }
         }
 
-
-
         .interests-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -529,7 +561,6 @@
             object-fit: contain;
             object-position: top;
             padding: 0rem 0;
-
         }
 
         .interest-link {
@@ -545,25 +576,24 @@
             transform: translateX(5px);
         }
 
-        /* 追加するスタイル */
         .work-item-details {
             margin-top: 0.5rem;
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.7);
-            height: 40px; /* 固定の高さを設定 */
+            height: 40px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
         }
 
         .work-item-details span {
-            display: block; /* インラインブロックからブロックに変更 */
-            margin-bottom: 0.3rem; /* 下部にマージンを追加 */
+            display: block;
+            margin-bottom: 0.3rem;
         }
 
         .work-item h2 {
-            margin-bottom: 0.5rem; /* タイトルの下部にマージンを追加 */
-            min-height: 1.5em; /* タイトルの最小高さを設定 */
+            margin-bottom: 0.5rem;
+            min-height: 1.5em;
         }
 
         .difficulty {
@@ -572,17 +602,16 @@
     </style>
 </head>
 <body>
-
-
-
     <div id="loading">
-        <div class="spinner"></div>
-      </div>
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading</div>
+        </div>
+    </div>
     <div class="grid-overlay"></div>
     
-
-
-        <!-- 既存のコンテンツをdiv で囲む -->
     <div id="content" style="display: none;">
         <!-- <div class="decorative-line line-1"></div>
         <div class="decorative-line line-2"></div>
